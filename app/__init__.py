@@ -11,3 +11,7 @@ def hello():
 @app.route("/products")
 def products():
     product_list = ["Juice", "Berries", "Sandwhiches"]
+    bullet_list = "".join(
+        "<li>%s</li>" % product for product in product_list
+    )
+    return "<ul>%s</ul>" % bullet_list
